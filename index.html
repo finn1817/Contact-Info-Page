@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Information - Daniel Finn</title>
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 0 0 50px; /* bottom padding equals the footer's height to prevent overlap */
             background-image: url("https://github.com/finn1817/image-links/blob/main/city.jpg?raw=true");
             background-size: cover;
-            background-repeat: no-repeat; 
+            background-attachment: fixed; /* Keeps the background fixed during scrolling */
+            background-repeat: no-repeat;
             color: #333;
             line-height: 1.6;
         }
@@ -22,7 +27,7 @@
             background-color: rgba(255, 255, 255, 0.8);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         
         h1 {
@@ -32,27 +37,49 @@
         }
         
         .contact-info {
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
         }
         
         .contact-info p {
-            margin: 5px 0; 
+            margin: 5px 0;
         }
         
         .email {
-            font-weight: bold; 
+            font-weight: bold;
         }
         
         .footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
-            color: #fff;
             background-color: #2c3e50; /* Dark blue for footer */
+            color: #fff;
+        }
+
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #4caf50; /* Green background */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .back-to-home:hover {
+            background-color: #45a049; /* Darker green on hover */
         }
     </style>
 </head>
 <body>
+    <!-- Back to Home link -->
+    <a href="https://finn1817.github.io/DanFinn/" class="back-to-home">Back to Home</a>
+    
     <div class="container">
         <h1>Daniel Finn</h1>
         <div class="contact-info">
