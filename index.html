@@ -1,93 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Information - Daniel Finn</title>
-    <style>
-        html {
-            position: relative;
-            min-height: 100%;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0 0 50px; /* bottom padding equals the footer's height to prevent overlap */
-            background-image: url("https://github.com/finn1817/image-links/blob/main/website_image_.jpg?raw=true");
-            background-size: cover;
-            background-attachment: fixed; /* Keeps the background fixed during scrolling */
-            background-repeat: no-repeat;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            text-align: center;
-            margin-bottom: 20px; 
-            color: #2c3e50; /* Dark blue shade */
-        }
-        
-        .contact-info {
-            margin-bottom: 20px;
-        }
-        
-        .contact-info p {
-            margin: 5px 0;
-        }
-        
-        .email {
-            font-weight: bold;
-        }
-        
-        .footer {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50; /* Dark blue for footer */
-            color: #fff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Information - Daniel Finn</title>
+  <style>
+    html {
+      position: relative;
+      min-height: 100%;
+    }
 
-        .back-to-home {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background-color: #4caf50; /* Green background */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0 0 50px;
+      background-image: url("https://github.com/finn1817/image-links/blob/main/website_image_.jpg?raw=true");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #333;
+      line-height: 1.6;
+      transition: background-image 0.4s ease;
+    }
 
-        .back-to-home:hover {
-            background-color: #45a049; /* Darker green on hover */
-        }
-    </style>
+    body.dark-mode {
+      background-image: url("https://github.com/finn1817/image-links/blob/main/darkMode.png?raw=true");
+      color: #f3f3f3;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    body.dark-mode .container {
+      background-color: rgba(30, 30, 30, 0.85);
+      color: #f3f3f3;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    body.dark-mode h1 {
+      color: #90caf9;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .email, .phone, .linkedin, .github {
+      font-weight: bold;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: #fff;
+    }
+
+    .back-to-home {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .back-to-home:hover {
+      background-color: #45a049;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+      background-color: white;
+      color: black;
+    }
+
+    a {
+      color: #007BFF;
+    }
+
+    body.dark-mode a {
+      color: #89caff;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 0.9em;
+      font-style: italic;
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body>
-    <!-- Back to Home link -->
-    <a href="https://finn1817.github.io/HomePage/" class="back-to-home">Back to Home</a>
-    
-    <div class="container">
-        <h1>Daniel Finn</h1>
-        <div class="contact-info">
-            <p class="email">School Email: <a href="mailto:finn1817@fredonia.edu">finn1817@fredonia.edu</a></p>
-        </div>
+
+  <a href="https://finn1817.github.io/HomePage/" class="back-to-home">Back to Home</a>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+
+  <div class="container">
+    <h1>Daniel Finn</h1>
+    <div class="contact-info">
+      <p class="email">School Email: <a href="mailto:finn1817@fredonia.edu">finn1817@fredonia.edu</a></p>
+      <p class="email">Personal Email: <a href="mailto:daniel.finn.dev@gmail.com">dan@dfinn.me</a></p>
+      <p class="phone">Phone (Text Preferred): <a href="tel:+17162001122">[just email me please!]</a></p>
+      <p class="github">GitHub: <a href="https://github.com/finn1817">github.com/finn1817</a></p>
     </div>
-    <div class="footer">
-        <p>© 2024 by Daniel Finn.</p>
-    </div>
+    <p class="note">Feel free to reach out regarding web development, resume critique, or a project I can assist in or make! I’m always excited to build and update all kinds of projects!</p>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 by Daniel Finn.</p>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // apply saved or preferred mode
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && prefersDark)) {
+        body.classList.add("dark-mode");
+        toggle.textContent = "☀️";
+      }
+    })();
+
+    function toggleTheme() {
+      const isDark = body.classList.toggle("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      toggle.textContent = isDark ? "☀️" : "🌙";
+    }
+  </script>
 </body>
 </html>
